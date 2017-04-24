@@ -8,9 +8,9 @@
   > By the user's choice, YKW will generate either hateful or loving responses.
 
 ## How to Get Started ##
-  > Steps to get started:
-  > Clone this repo
-  > Run: npm install
+  > Steps to get started: *separate paragraph*
+  > Clone this repo *separate paragraph*
+  > Run: npm install *separate paragraph*
   > Fill in the appropriate fields: who you want to tell off and your own name.
 
 ## Feedback ##
