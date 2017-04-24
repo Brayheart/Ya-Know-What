@@ -13,7 +13,7 @@ app.use(parser.urlencoded({
   extended: true
 }))
 
-app.use(express.static(path.join(__dirname, 'client')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.use('/', router);
 
