@@ -1,6 +1,9 @@
 ## Ya Know What?! ##
   > Ya Know What?! (YKW) is a response generator.
 
+## YKW APIs ##
+  > YKW utilizes FOAAS, LAAS, and Twilio.
+
 ## Problem ##
   > When confronted with an unsavory situation, how will you respond? YKW seeks to alleviate this situation and assist the less than witty.
 
