@@ -1,25 +1,30 @@
 {
   "name": "Ya-Know-What",
   "version": "1.0.0",
-  "description": "Ya Know What?!  MERN Stack",
-  "main": "router.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "compile": "webpack -w"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J6K/Ya-Know-What.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J6K/Ya-Know-What/issues"
+  },
+  "homepage": "https://github.com/J6K/Ya-Know-What#readme",
   "dependencies": {
-    "axios": "^0.16.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "mongoose": "^4.9.5",
+    "mongoose": "^4.9.6",
     "mongoose-auto-increment": "^5.0.1",
     "path": "^0.12.7",
     "react": "^15.5.4",

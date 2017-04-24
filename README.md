@@ -1,10 +1,10 @@
-Ya Know What?! 
-MERN Stack 
+Ya Know What?! (YKW) is a response generator.
 
-'Ya Know What?!' (YKW) is a response generator.
+When confronted with an unsavory situation, how will you respond? YKW seeks to alleviate this situation and assist the less than witty.
 
-YKW utilizes the following APIs: Quotes on Design, Fuck Off As A Service, Love As A Service.
+YKW uses the following APIs: FOAAS, LOAS, *Twilio*.
 
-By the user's choice, YKW will generate a hateful, loving, or motivational response.
+Users can input who they wish to respond to and their own name to make it more of a personal statement. 
 
-Users can save their responses, and users can load them back up if they forget their response.
+- To Be Implemented Later - 
+Users also have the option to send their victim a text message with the response. 
