@@ -8,7 +8,7 @@ class App extends Component {
     super()
 
     this.state = {
-      urls: [],
+      hatefulUrls: [],
       responses: []
     }
   }
@@ -20,9 +20,9 @@ class App extends Component {
              return data.url.includes(':name')
            })
            _.each(urls, url => {
-             this.setState({urls: [...this.state.urls, url.url]})
+             this.setState({hatefulUrls: [...this.state.hatefulUrls, url.url]})
            })
-           console.log(this.state.urls)
+           console.log(this.state.hatefulUrls)
          })
   }
 
