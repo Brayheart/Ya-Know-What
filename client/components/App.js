@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Button, ButtonControl } from 'react-bootstrap';
 import axios from 'axios';
 import _ from 'lodash';
+import ResponseList from './ResponseList';
 
 class App extends Component {
   constructor() {
@@ -77,6 +78,8 @@ class App extends Component {
         <Button onClick={this.handleSubmit} bsStyle="primary" type="submit">
           Submit
         </Button>
+        <br/>
+        <ResponseList responses={this.state.responses}/>
       </div>  
     )
   }
