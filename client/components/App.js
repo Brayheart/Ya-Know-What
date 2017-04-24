@@ -17,7 +17,7 @@ class App extends Component {
 
     this.nameChange = this.nameChange.bind(this);
     this.fromChange = this.fromChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -29,24 +29,38 @@ class App extends Component {
            _.each(urls, url => {
              this.setState({hatefulUrls: [...this.state.hatefulUrls, url.url]})
            })
+          //  let hate = this.state.hatefulUrls[Math.floor(Math.random()*this.state.hatefulUrls.length)]
+          //  hate = hate.replace(':name', 'justin');
+          //  hate = hate.replace(':from', 'a');
+          //  console.log('http://www.foaas.com/'+ hate);
          })
   }
 
   nameChange(event) {
     this.setState({name: event.target.value});
-    console.log(this.state.name)
+    // console.log(this.state.name)
   }
   
   fromChange(event) {
     this.setState({from: event.target.value});
-    console.log(this.state.from);
+    // console.log(this.state.from);
   }
 
-  // handleSubmit(event){
-  //   event.preventDefault();
-  //   axios.get('http://www.foaas.com/' + this.state.hatefulUrls[Math.floor(Math.random()*this.state.hatefulUrls.length)] + )
+  handleSubmit(event){
+    event.preventDefault();
+    let hate = this.state.hatefulUrls[Math.floor(Math.random()*this.state.hatefulUrls.length)];
+    hate = hate.replace(':name', this.state.name);
+    hate = hate.replace(':from', this.state.from);
+    axios.get('http://www.foaas.com' + hate)
+    .then(res => {
+      this.setState({responses: [...this.state.responses, res.data.message]});
+      console.log(res.data.message);
+      console.log(this.state.responses)
+    }).catch(err => {
+      console.log('Err in handleSubmit: ', err);
+    });
 
-  // }
+  }
 
   render() {
     return(
@@ -60,7 +74,7 @@ class App extends Component {
           <input onChange={this.fromChange} type="text" name="from" placeholder="    Who's Telling Em??"/>
         </Form>
           <br/>
-        <Button bsStyle="primary" type="submit">
+        <Button onClick={this.handleSubmit} bsStyle="primary" type="submit">
           Submit
         </Button>
       </div>  
