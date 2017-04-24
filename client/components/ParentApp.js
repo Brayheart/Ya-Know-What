@@ -16,7 +16,7 @@ class ParentApp extends Component {
         <div>
           <Route exact path='/' component={App}/>
           <Route path='/fighter' component={FightApp}/>
-          {/*<Route path='/lover' component={LoveApp}/>*/}
+          <Route path='/lover' component={LoveApp}/>
         </div>
       </Router>
     )
@@ -24,26 +24,3 @@ class ParentApp extends Component {
 }
 
 export default ParentApp;
-          
-          
-          
-          
-          
-          
-//<div style={{textAlign:'center'}}>
-  // <h1>Ya Know What?!</h1>
-  // <br/>
-  // <Link to="/fighter">
-    // <Button bsStyle="primary" type="submit">
-      // Fighter
-    // </Button>
-  // </Link>
-  // <br/>
-  // <br/>
-  // {/*<Link>*/}
-    // <Button bsStyle="primary" type="submit">
-      // Lover
-    // </Button>
-  // {/*</Link>*/}
-  // <Route path="/fighter" component={FightApp}></Route>
-// </div>

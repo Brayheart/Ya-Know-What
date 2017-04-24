@@ -42,10 +42,10 @@ class LoveApp extends Component {
 
   handleSubmit(event){
     event.preventDefault();
-    let hate = this.state.hatefulUrls[Math.floor(Math.random()*this.state.hatefulUrls.length)];
-    hate = hate.replace(':name', this.state.name);
-    hate = hate.replace(':from', this.state.from);
-    axios.get('http://www.foaas.com' + hate)
+    let love = this.state.lovingUrls[Math.floor(Math.random()*this.state.lovingUrls.length)];
+    love = love.replace(':name', this.state.name);
+    love = love.replace(':from', this.state.from);
+    axios.get('http://laas.herokuapp.com' + love)
     .then(res => {
       this.setState({responses: [...this.state.responses, res.data.message]});
       console.log(res.data.message);
