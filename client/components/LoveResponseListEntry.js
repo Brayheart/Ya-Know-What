@@ -1,7 +1,7 @@
 import React from 'react';
 import { Well } from 'react-bootstrap';
 
-const ResponseListEntry = (props) => {
+const LoveResponseListEntry = (props) => {
   return(
     <Well>
       <div>{props.response}</div>
@@ -9,4 +9,4 @@ const ResponseListEntry = (props) => {
   )
 }
 
-export default ResponseListEntry;
+export default LoveResponseListEntry;
