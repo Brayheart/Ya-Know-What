@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Form, Button, ButtonControl } from 'react-bootstrap';
 import axios from 'axios';
+import _ from 'lodash';
 
 class App extends Component {
   constructor() {
     super()
 
     this.state = {
-      url: [],
+      urls: [],
       responses: []
     }
   }
@@ -15,15 +16,13 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://www.foaas.com/operations')
          .then(res => {
-           console.log(res.data)
-           console.log(res.data[1].url.includes(':name' && ':from'));
-           console.log(res.data[2].url.includes(':from' && ':name'));
-           let arr = res.data.filter(data => {
-            //  console.log(data);
-            //  console.log(data.url);
+           let urls = res.data.filter(data => {
              return data.url.includes(':name')
            })
-           console.log(arr);
+           _.each(urls, url => {
+             this.setState({urls: [...this.state.urls, url.url]})
+           })
+           console.log(this.state.urls)
          })
   }
 
