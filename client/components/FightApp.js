@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Form, Button, ButtonControl } from 'react-bootstrap';
 import axios from 'axios';
 import _ from 'lodash';
+import WhatsWrong from './WhatsWrong';
 import FightResponseList from './FightResponseList';
 
 class FightApp extends Component {
@@ -52,7 +53,8 @@ class FightApp extends Component {
       this.setState({responses: [...this.state.responses, res.data.message + ' ' + res.data.subtitle]});
       this.setState({count: this.state.count+=1});
       if(this.state.count === 3) {
-        <Link to='/lover' />
+        alert('You okay?');
+        ReactDOM.render(<WhatsWrong />, document.getElementById('app'));
       }
     }).catch(err => {
       console.log('Err in handleSubmit: ', err);
