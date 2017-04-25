@@ -3,6 +3,7 @@ import { Form, Button, ButtonControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FightApp from './FightApp';
 import LoveApp from './LoveApp';
+import '../../node_modules/sweetalert/dist/sweetalert.css'
 
 class App extends Component {
   constructor() {

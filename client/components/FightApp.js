@@ -5,6 +5,7 @@ import axios from 'axios';
 import _ from 'lodash';
 import WhatsWrong from './WhatsWrong';
 import FightResponseList from './FightResponseList';
+import swal from 'sweetalert';
 
 class FightApp extends Component {
   constructor() {
@@ -53,7 +54,11 @@ class FightApp extends Component {
       this.setState({responses: [res.data.message + ' ' + res.data.subtitle, ...this.state.responses]});
       this.setState({count: this.state.count+=1});
       if(this.state.count === 3) {
-        alert('You okay?');
+        swal({
+          title: "You okay, buddy?",
+          text: "I think you need to let it out",
+          confirmButtonText: "Come On Through"
+        });
         ReactDOM.render(<WhatsWrong />, document.getElementById('app'));
       }
     }).catch(err => {

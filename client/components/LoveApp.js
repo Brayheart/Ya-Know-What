@@ -5,6 +5,7 @@ import axios from 'axios';
 import _ from 'lodash';
 import LoveResponseList from './LoveResponseList';
 import FightApp from './FightApp';
+import swal from 'sweetalert';
 
 class LoveApp extends Component {
   constructor() {
@@ -39,7 +40,11 @@ class LoveApp extends Component {
     this.setState({responses: [love, ...this.state.responses]});
     this.setState({count: this.state.count += 1})
     if(this.state.count === 3) {
-        alert("You're a bit too chipper");
+        swal({
+          title: "You're a bit too chipper..",
+          text: "Let the hate flow through you",
+          confirmButtonText: "Okay"
+        });
         ReactDOM.render(<FightApp />, document.getElementById('app'));
       }
   }
