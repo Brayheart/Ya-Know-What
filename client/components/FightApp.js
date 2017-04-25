@@ -47,9 +47,7 @@ class FightApp extends Component {
     hate = hate.replace(':from', this.state.from);
     axios.get('http://www.foaas.com' + hate)
     .then(res => {
-      this.setState({responses: [...this.state.responses, res.data.message]});
-      console.log(res.data.message);
-      console.log(this.state.responses)
+      this.setState({responses: [...this.state.responses, res.data.message + ' ' + res.data.subtitle]});
     }).catch(err => {
       console.log('Err in handleSubmit: ', err);
     });
