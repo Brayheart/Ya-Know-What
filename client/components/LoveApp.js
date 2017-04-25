@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Form, Button, ButtonControl } from 'react-bootstrap';
 import axios from 'axios';
 import _ from 'lodash';
 import LoveResponseList from './LoveResponseList';
+import FightApp from './FightApp';
 
 class LoveApp extends Component {
   constructor() {
@@ -63,7 +65,10 @@ class LoveApp extends Component {
     // });
     this.setState({responses: [...this.state.responses, love]});
     this.setState({count: this.state.count += 1})
-    console.log(this.state.count)
+    if(this.state.count === 3) {
+        alert("You're a bit too chipper");
+        ReactDOM.render(<FightApp />, document.getElementById('app'));
+      }
   }
 
   render() {
