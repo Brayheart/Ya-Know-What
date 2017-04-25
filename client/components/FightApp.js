@@ -66,6 +66,8 @@ class FightApp extends Component {
       <div style={{textAlign:'center'}}>
         <h1>Ya Know What?!</h1>
         <br/>
+        <h2>Fight</h2>
+        <br/>
         <Form>
           <input onChange={this.nameChange} type="text" name="name" placeholder="  Who Needs To Know??"/>
           <br/>
@@ -76,6 +78,7 @@ class FightApp extends Component {
         <Button onClick={this.handleSubmit} bsStyle="primary" type="submit">
           Submit
         </Button>
+        <br/>
         <br/>
         <FightResponseList responses={this.state.responses}/>
       </div>  
