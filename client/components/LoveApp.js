@@ -12,7 +12,8 @@ class LoveApp extends Component {
       lovingUrls: ['I Love you, :name. - :from', 'Everyone can go and love one another. - :name', ':name, I Love You like 100 donuts. - :from', ':name, Love looks not with the eyes, but with the mind, and therefore is winged Cupid painted blind - :from', 'Make Love, not war :name, you are fucking thick. - :from', 'Love me gentle, Love me slowly :name. - :from', ':name, Love is composed of a single soul inhabiting two bodies. - :from'],
       responses: [],
       name: '',
-      from: ''
+      from: '',
+      count: 0
     }
 
     this.nameChange = this.nameChange.bind(this);
@@ -61,7 +62,8 @@ class LoveApp extends Component {
     //   console.log('Err in handleSubmit: ', err);
     // });
     this.setState({responses: [...this.state.responses, love]});
-
+    this.setState({count: this.state.count += 1})
+    console.log(this.state.count)
   }
 
   render() {
