@@ -23,18 +23,6 @@ class LoveApp extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidMount() {
-  //   axios.get('http://www.foaas.com/operations')
-  //        .then(res => {
-  //          let urls = res.data.filter(data => {
-  //            return data.url.includes(':name')
-  //          })
-  //          _.each(urls, url => {
-  //            this.setState({hatefulUrls: [...this.state.hatefulUrls, url.url]})
-  //          })
-  //        })
-  // }
-
   nameChange(event) {
     this.setState({name: event.target.value});
   }
@@ -48,21 +36,6 @@ class LoveApp extends Component {
     let love = this.state.lovingUrls[Math.floor(Math.random()*this.state.lovingUrls.length)];
     love = love.replace(':name', this.state.name);
     love = love.replace(':from', this.state.from);
-    // axios({
-    //   method: 'get',
-    //   url: 'http://laas.herokuapp.com' + love,
-    //   headers: {
-    //     'Accept': 'text/plain',
-    //     'Access-Control-Allow-Origin': '*'
-    //     // 'Content-Type': 'application/json',
-    //   }
-    // }).then(res => {
-    //   this.setState({responses: [...this.state.responses, res.data.message]});
-    //   console.log(res.data.message);
-    //   console.log(this.state.responses)
-    // }).catch(err => {
-    //   console.log('Err in handleSubmit: ', err);
-    // });
     this.setState({responses: [...this.state.responses, love]});
     this.setState({count: this.state.count += 1})
     if(this.state.count === 3) {
