@@ -41,9 +41,11 @@ class LoveApp extends Component {
     this.setState({count: this.state.count += 1})
     if(this.state.count === 3) {
         swal({
+          imageUrl: "http://img3.wikia.nocookie.net/__cb20130512004419/villains/images/6/6a/Palpatine_Evil_Smile.jpg",
+          imageSize: "150x150",
           title: "You're a bit too chipper..",
-          text: "Let the hate flow through you",
-          confirmButtonText: "Okay"
+          text: "Let the hate flow through you..",
+          confirmButtonText: "Show me"
         });
         ReactDOM.render(<FightApp />, document.getElementById('app'));
       }

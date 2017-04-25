@@ -55,6 +55,8 @@ class FightApp extends Component {
       this.setState({count: this.state.count+=1});
       if(this.state.count === 3) {
         swal({
+          imageUrl: "http://gifrific.com/wp-content/uploads/2012/04/tina-fey-alec-baldwin-there-there.gif",
+          imageSize: "250x150",
           title: "You okay, buddy?",
           text: "I think you need to let it out",
           confirmButtonText: "Come On Through"
