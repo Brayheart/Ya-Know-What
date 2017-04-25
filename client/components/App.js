@@ -14,17 +14,17 @@ class App extends Component {
       <div style={{textAlign:'center'}}>
         <h1>Ya Know What?!</h1>
         <br/>
+        <Link to="/lover">
+          <Button bsStyle="primary" type="submit">
+            Lover
+          </Button>
+        <br/>
+        <br/>
         <Link to="/fighter">
           <Button bsStyle="primary" type="submit">
             Fighter
           </Button>
         </Link>
-        <br/>
-        <br/>
-        <Link to="/lover">
-          <Button bsStyle="primary" type="submit">
-            Lover
-          </Button>
         </Link>
       </div>
     )
