@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { Form, Button, ButtonControl } from 'react-bootstrap';
 import axios from 'axios';
 import _ from 'lodash';
@@ -12,7 +13,8 @@ class FightApp extends Component {
       hatefulUrls: [],
       responses: [],
       name: '',
-      from: ''
+      from: '',
+      count: 0
     }
 
     this.nameChange = this.nameChange.bind(this);
@@ -48,10 +50,13 @@ class FightApp extends Component {
     axios.get('http://www.foaas.com' + hate)
     .then(res => {
       this.setState({responses: [...this.state.responses, res.data.message + ' ' + res.data.subtitle]});
+      this.setState({count: this.state.count+=1});
+      if(this.state.count === 3) {
+        <Link to='/lover' />
+      }
     }).catch(err => {
       console.log('Err in handleSubmit: ', err);
     });
-
   }
 
   render() {
