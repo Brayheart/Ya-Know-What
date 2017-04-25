@@ -21,7 +21,7 @@ class WhatsWrong extends Component {
          .then(res => {
            console.log(res);
            for(var i = 0 ; i < res.data.length ; i++){
-              this.setState({rants: [...this.state.rants, res.data[i].response]});
+              this.setState({rants: [res.data[i].response, ...this.state.rants]});
             }
            })
          .catch(err => {
@@ -35,7 +35,8 @@ class WhatsWrong extends Component {
       response: this.state.rant
     }).then(data => {
       console.log(data);
-      this.setState({rants: [...this.state.rants, this.state.rant]});
+      this.setState({rants: [this.state.rant, ...this.state.rants]});
+      this.render();
     }).catch(err => {
       console.log('Error in rantSubmit: ', err);
     })

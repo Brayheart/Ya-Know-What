@@ -36,7 +36,7 @@ class LoveApp extends Component {
     let love = this.state.lovingUrls[Math.floor(Math.random()*this.state.lovingUrls.length)];
     love = love.replace(':name', this.state.name);
     love = love.replace(':from', this.state.from);
-    this.setState({responses: [...this.state.responses, love]});
+    this.setState({responses: [love, ...this.state.responses]});
     this.setState({count: this.state.count += 1})
     if(this.state.count === 3) {
         alert("You're a bit too chipper");
@@ -48,8 +48,7 @@ class LoveApp extends Component {
     return(
       <div style={{textAlign:'center'}}>
         <h1>Ya Know What?!</h1>
-        <br/>
-        <h2>Love</h2>
+        <h3>Feeling kind?</h3>
         <br/>
         <Form>
           <input onChange={this.nameChange} type="text" name="name" placeholder="  Who Needs To Know??"/>

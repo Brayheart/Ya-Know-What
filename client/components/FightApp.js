@@ -50,7 +50,7 @@ class FightApp extends Component {
     hate = hate.replace(':from', this.state.from);
     axios.get('http://www.foaas.com' + hate)
     .then(res => {
-      this.setState({responses: [...this.state.responses, res.data.message + ' ' + res.data.subtitle]});
+      this.setState({responses: [res.data.message + ' ' + res.data.subtitle, ...this.state.responses]});
       this.setState({count: this.state.count+=1});
       if(this.state.count === 3) {
         alert('You okay?');
@@ -65,8 +65,7 @@ class FightApp extends Component {
     return(
       <div style={{textAlign:'center'}}>
         <h1>Ya Know What?!</h1>
-        <br/>
-        <h2>Fight</h2>
+        <h3>Feeling feisty?</h3>
         <br/>
         <Form>
           <input onChange={this.nameChange} type="text" name="name" placeholder="  Who Needs To Know??"/>
