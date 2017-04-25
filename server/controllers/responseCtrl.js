@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const Practice = require('../models/responseModel').Practice
+const Response = require('../models/responseModel').Response
 
 const responseCtrl = {
   get: (req, res) => {
-    Practice.find({}, (err, data) => {
+    Response.find({}, (err, data) => {
       if(err) {
         console.log('Error with GET Request');
         res.status(404);
@@ -14,8 +14,8 @@ const responseCtrl = {
     })
   },
   post: (req, res) => {
-    let newPractice = new Practice(req.body);
-    newPractice.save(err => {
+    let newResponse = new Response(req.body);
+    newResponse.save(err => {
       if(err) {
         console.log('Error with POST Request');
         res.status(404);
