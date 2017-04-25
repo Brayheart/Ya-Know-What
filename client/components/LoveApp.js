@@ -49,6 +49,8 @@ class LoveApp extends Component {
       <div style={{textAlign:'center'}}>
         <h1>Ya Know What?!</h1>
         <br/>
+        <h2>Love</h2>
+        <br/>
         <Form>
           <input onChange={this.nameChange} type="text" name="name" placeholder="  Who Needs To Know??"/>
           <br/>
@@ -59,6 +61,7 @@ class LoveApp extends Component {
         <Button onClick={this.handleSubmit} bsStyle="primary" type="submit">
           Submit
         </Button>
+        <br/>
         <br/>
         <LoveResponseList responses={this.state.responses}/>
       </div>  
