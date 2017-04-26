@@ -52,7 +52,7 @@ class WhatsWrong extends Component {
         <h1>What's Wrong?</h1>
         <br/>
         <Form>
-          <input onChange={this.rantChange} type='text' name='rant' placeholder='     Shhh Safe Space'/>
+          <input onChange={this.rantChange} type='text' name='rant' placeholder='       Shhh Safe Space'/>
         </Form>
         <br/>
         <Button onClick={this.rantSubmit} bsStyle="primary" type="submit">
